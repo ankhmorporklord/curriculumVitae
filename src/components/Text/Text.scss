@@ -1,3 +1,5 @@
+@import "../../library";
+
 // font-sizes
 
 .header {
@@ -6,9 +8,15 @@
   font-weight: 700;
 }
 
+.wrapper-layout {
+  align-items: center;
+  display: flex;
+}
+
 .title {
   font-family: Roboto, sans-serif;
   font-size: 32px;
+  text-transform: uppercase;
   font-weight: 400;
 }
 
@@ -16,6 +24,7 @@
   font-family: Roboto, sans-serif;
   font-size: 24px;
   font-weight: 700;
+  text-transform: capitalize;
 }
 
 .text {
@@ -24,12 +33,19 @@
   font-weight: 400;
 }
 
+.wrapper-square {
+  border: 2px solid $color-dark;
+  padding: 0 10px;
+}
+
+.wrapper-line {
+  background-color: $color-dark;
+  height: 2px;
+  width: 100%;
+}
+
 
 @media only screen and (max-width: 600px) {
-  .header {
-    font-size: 28px;
-  }
-
   .header {
     font-size: 28px;
   }
