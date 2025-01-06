@@ -5,7 +5,6 @@
 .header {
   font-family: Roboto, sans-serif;
   font-size: 40px;
-  font-weight: 700;
 }
 
 .wrapper-layout {
@@ -17,20 +16,17 @@
   font-family: Roboto, sans-serif;
   font-size: 32px;
   text-transform: uppercase;
-  font-weight: 400;
 }
 
 .subtitle {
   font-family: Roboto, sans-serif;
   font-size: 24px;
-  font-weight: 700;
   text-transform: capitalize;
 }
 
 .text {
   font-family: Roboto, sans-serif;
   font-size: 20px;
-  font-weight: 400;
 }
 
 .wrapper-square {
@@ -42,6 +38,10 @@
   background-color: $color-dark;
   height: 2px;
   width: 100%;
+}
+
+.bold {
+  font-weight: 700;
 }
 
 

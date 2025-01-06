@@ -3,15 +3,16 @@ import React from 'react';
 import './Text.scss'
 
 interface TextProps {
-    type?: 'header' | 'title' | 'subtitle' | 'text';
+    bold?: boolean;
     text?: string;
+    type?: 'header' | 'title' | 'subtitle' | 'text';
 }
 
-const Text = ({ type = 'text', text = '' }: TextProps) => {
+const Text = ({ type = 'text', text = '', bold = false }: TextProps) => {
     const showSquareWrapper = type === 'title';
     return (
         <span className={classes(showSquareWrapper && "wrapper-layout")}>
-            <span className={classes(type, showSquareWrapper && 'wrapper-square')}>{text}</span>
+            <span className={classes(type, bold && 'bold', showSquareWrapper && 'wrapper-square')}>{text}</span>
             {showSquareWrapper && <div className="wrapper-line"></div>}
         </span>
     );

@@ -2,6 +2,7 @@ import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
 import '../library.scss';
 import Text from '../components/Text/Text';
+import Header from "../components/Header/Header";
 
 const pageStyles = {
   color: "#232129",
@@ -141,8 +142,9 @@ const links = [
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <main style={pageStyles}>
-      <Text type="header" text="header" />
+      <Header />
       <Text type="title" text="title" />
+      <Text type="header" text="header" />
       <Text type="subtitle" text="subtitle" />
       <Text text="text" />
       <h1 style={headingStyles}>
