@@ -29,6 +29,10 @@
   font-size: 20px;
 }
 
+.text-width {
+  min-width: fit-content;
+}
+
 .wrapper-square {
   border: 2px solid $color-dark;
   padding: 0 10px;

@@ -3,6 +3,7 @@ import type { HeadFC, PageProps } from "gatsby"
 import '../library.scss';
 import Text from '../components/Text/Text';
 import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 
 const pageStyles = {
   color: "#232129",
@@ -147,6 +148,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <Text type="header" text="header" />
       <Text type="subtitle" text="subtitle" />
       <Text text="text" />
+      <Footer />
       <h1 style={headingStyles}>
         Congratulations
         <br />

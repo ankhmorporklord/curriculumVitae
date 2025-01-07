@@ -6,14 +6,16 @@ interface TextProps {
     bold?: boolean;
     text?: string;
     type?: 'header' | 'title' | 'subtitle' | 'text';
+    showSquareWrapper?: boolean;
+    showSquareWrapperLine?: boolean;
 }
 
-const Text = ({ type = 'text', text = '', bold = false }: TextProps) => {
-    const showSquareWrapper = type === 'title';
+const Text = ({ type = 'text', text = '', bold = false, showSquareWrapper, showSquareWrapperLine }: TextProps) => {
+    const showWrapper = type === 'title' || showSquareWrapper;
     return (
-        <span className={classes(showSquareWrapper && "wrapper-layout")}>
-            <span className={classes(type, bold && 'bold', showSquareWrapper && 'wrapper-square')}>{text}</span>
-            {showSquareWrapper && <div className="wrapper-line"></div>}
+        <span className={classes(showWrapper && "wrapper-layout")}>
+            <span className={classes(type, bold && 'bold', 'text-width', showWrapper && 'wrapper-square')}>{text}</span>
+            {showWrapper && showSquareWrapperLine !== false && <div className="wrapper-line"></div>}
         </span>
     );
 }
