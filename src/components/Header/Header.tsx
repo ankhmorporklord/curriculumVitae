@@ -1,19 +1,36 @@
 import React from 'react';
-import texts from '../../localizations/es';
 import Text from '../Text/Text';
 import Photo from '../../assets/photo.png';
 import './Header.scss'
+import { graphql } from "gatsby";
 
-const Header = () => {
-    return (
-        <span className="layout">
-            <span className="texts">
-                <Text bold type="header" text={texts.header.name}/>
-                <Text type="header" text={texts.header.position}/>
-            </span>
-            <img className="photo" src={Photo} alt='logo' width="239px" height="239px" />
-        </span>
-    );
+export type Header = {
+  name: string;
+  position: string;
+};
+
+const Header = ({ name, position }: Header) => {
+  return (
+    <span className="layout">
+      <span className="texts">
+        <Text bold type="header" text={name} />
+        <Text type="header" text={position}/>
+      </span>
+      <img className="photo" src={Photo} alt='logo' width="239px" height="239px" />
+    </span>
+  );
 }
 
 export default Header;
+
+export const query = graphql `
+ query {
+  site {
+    siteMetadata {
+      header {
+        name,
+        position,
+      }
+    }
+  }
+}`;

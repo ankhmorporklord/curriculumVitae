@@ -2269,25 +2269,73 @@ type SitePluginSortInput = {
 
 type SiteSiteMetadata = {
   readonly description: Maybe<Scalars['String']>;
-  readonly siteUrl: Maybe<Scalars['String']>;
+  readonly header: Maybe<SiteSiteMetadataHeader>;
+  readonly sections: Maybe<ReadonlyArray<Maybe<SiteSiteMetadataSections>>>;
   readonly title: Maybe<Scalars['String']>;
 };
 
 type SiteSiteMetadataFieldSelector = {
   readonly description: InputMaybe<FieldSelectorEnum>;
-  readonly siteUrl: InputMaybe<FieldSelectorEnum>;
+  readonly header: InputMaybe<SiteSiteMetadataHeaderFieldSelector>;
+  readonly sections: InputMaybe<SiteSiteMetadataSectionsFieldSelector>;
   readonly title: InputMaybe<FieldSelectorEnum>;
 };
 
 type SiteSiteMetadataFilterInput = {
   readonly description: InputMaybe<StringQueryOperatorInput>;
-  readonly siteUrl: InputMaybe<StringQueryOperatorInput>;
+  readonly header: InputMaybe<SiteSiteMetadataHeaderFilterInput>;
+  readonly sections: InputMaybe<SiteSiteMetadataSectionsFilterListInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
+};
+
+type SiteSiteMetadataHeader = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly position: Maybe<Scalars['String']>;
+};
+
+type SiteSiteMetadataHeaderFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly position: InputMaybe<FieldSelectorEnum>;
+};
+
+type SiteSiteMetadataHeaderFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly position: InputMaybe<StringQueryOperatorInput>;
+};
+
+type SiteSiteMetadataHeaderSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly position: InputMaybe<SortOrderEnum>;
+};
+
+type SiteSiteMetadataSections = {
+  readonly lines: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly title: Maybe<Scalars['String']>;
+};
+
+type SiteSiteMetadataSectionsFieldSelector = {
+  readonly lines: InputMaybe<FieldSelectorEnum>;
+  readonly title: InputMaybe<FieldSelectorEnum>;
+};
+
+type SiteSiteMetadataSectionsFilterInput = {
+  readonly lines: InputMaybe<StringQueryOperatorInput>;
+  readonly title: InputMaybe<StringQueryOperatorInput>;
+};
+
+type SiteSiteMetadataSectionsFilterListInput = {
+  readonly elemMatch: InputMaybe<SiteSiteMetadataSectionsFilterInput>;
+};
+
+type SiteSiteMetadataSectionsSortInput = {
+  readonly lines: InputMaybe<SortOrderEnum>;
+  readonly title: InputMaybe<SortOrderEnum>;
 };
 
 type SiteSiteMetadataSortInput = {
   readonly description: InputMaybe<SortOrderEnum>;
-  readonly siteUrl: InputMaybe<SortOrderEnum>;
+  readonly header: InputMaybe<SiteSiteMetadataHeaderSortInput>;
+  readonly sections: InputMaybe<SiteSiteMetadataSectionsSortInput>;
   readonly title: InputMaybe<SortOrderEnum>;
 };
 
