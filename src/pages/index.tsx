@@ -4,7 +4,8 @@ import '../library.scss';
 import Text from '../components/Text/Text';
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import { Data } from "../../gatsby-config";
+import { Data, SectionType } from "../../gatsby-config";
+import Section from "../components/Section/Section";
 
 const pageStyles = {
   color: "#232129",
@@ -12,12 +13,15 @@ const pageStyles = {
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 }
 
-const IndexPage: React.FC<PageProps> = ({ data }: { data: Data }) => {
+const IndexPage: React.FC<PageProps> = ({ data }: { data: Data, sections: SectionType[] }) => {
 
-  const { site: { siteMetadata: { header } } } = data || {};
+  const { site: { siteMetadata: { header, sections } } } = data || {};
   return (
     <main style={pageStyles}>
       <Header {...header} />
+      {(sections || []).map((section: SectionType) =>(
+        <Section {...section} />
+      ))}
       <Text type="title" text="title" />
       <Text type="header" text="header" />
       <Text type="subtitle" text="subtitle" />
@@ -38,6 +42,14 @@ export const query = graphql `
       header {
         name,
         position,
+      },
+      sections {
+        title,
+        info {
+          text,
+          bold,
+          Tag,
+        }
       }
     }
   }

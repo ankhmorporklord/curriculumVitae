@@ -2309,17 +2309,17 @@ type SiteSiteMetadataHeaderSortInput = {
 };
 
 type SiteSiteMetadataSections = {
-  readonly lines: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly info: Maybe<ReadonlyArray<Maybe<SiteSiteMetadataSectionsInfo>>>;
   readonly title: Maybe<Scalars['String']>;
 };
 
 type SiteSiteMetadataSectionsFieldSelector = {
-  readonly lines: InputMaybe<FieldSelectorEnum>;
+  readonly info: InputMaybe<SiteSiteMetadataSectionsInfoFieldSelector>;
   readonly title: InputMaybe<FieldSelectorEnum>;
 };
 
 type SiteSiteMetadataSectionsFilterInput = {
-  readonly lines: InputMaybe<StringQueryOperatorInput>;
+  readonly info: InputMaybe<SiteSiteMetadataSectionsInfoFilterListInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
 };
 
@@ -2327,8 +2327,36 @@ type SiteSiteMetadataSectionsFilterListInput = {
   readonly elemMatch: InputMaybe<SiteSiteMetadataSectionsFilterInput>;
 };
 
+type SiteSiteMetadataSectionsInfo = {
+  readonly Tag: Maybe<Scalars['String']>;
+  readonly bold: Maybe<Scalars['Boolean']>;
+  readonly text: Maybe<Scalars['String']>;
+};
+
+type SiteSiteMetadataSectionsInfoFieldSelector = {
+  readonly Tag: InputMaybe<FieldSelectorEnum>;
+  readonly bold: InputMaybe<FieldSelectorEnum>;
+  readonly text: InputMaybe<FieldSelectorEnum>;
+};
+
+type SiteSiteMetadataSectionsInfoFilterInput = {
+  readonly Tag: InputMaybe<StringQueryOperatorInput>;
+  readonly bold: InputMaybe<BooleanQueryOperatorInput>;
+  readonly text: InputMaybe<StringQueryOperatorInput>;
+};
+
+type SiteSiteMetadataSectionsInfoFilterListInput = {
+  readonly elemMatch: InputMaybe<SiteSiteMetadataSectionsInfoFilterInput>;
+};
+
+type SiteSiteMetadataSectionsInfoSortInput = {
+  readonly Tag: InputMaybe<SortOrderEnum>;
+  readonly bold: InputMaybe<SortOrderEnum>;
+  readonly text: InputMaybe<SortOrderEnum>;
+};
+
 type SiteSiteMetadataSectionsSortInput = {
-  readonly lines: InputMaybe<SortOrderEnum>;
+  readonly info: InputMaybe<SiteSiteMetadataSectionsInfoSortInput>;
   readonly title: InputMaybe<SortOrderEnum>;
 };
 

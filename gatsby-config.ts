@@ -1,16 +1,23 @@
 import type { GatsbyConfig } from "gatsby";
 import { Header } from "./src/components/Header/Header";
+import { TagType } from "./src/components/Text/Text";
 
-export type Section = {
+export type InfoType = {
+  text: string;
+  bold?: boolean;
+  Tag?: TagType;
+}
+
+export type SectionType = {
   title: string;
-  infoLines: string[];
+  info: InfoType[];
 };
 
 export interface Data {
   site: {
     siteMetadata: {
       header: Header
-      sections: Section[]
+      sections: SectionType[]
     }
   }
 };
@@ -23,7 +30,11 @@ const config: GatsbyConfig = {
     },
     sections: [{
       title: 'contact',
-      infoLines: ['phone: +34 644 40 29 41', 'email: zaquihex@gmail.com', 'github: https://github.com/ankhmorporklord']
+      info: [
+        { text: 'phone: ', bold: true }, { text: '+34 644 40 29 41' },
+        { text: 'email: ', bold: true }, { text: 'zaquihex@gmail.com', Tag: 'div' },
+        { text: 'github: ', bold: true }, { text: 'https://github.com/ankhmorporklord', Tag: 'div' }
+      ]
     }],
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.

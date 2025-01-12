@@ -2,7 +2,6 @@ import React from 'react';
 import Text from '../Text/Text';
 import Photo from '../../assets/photo.png';
 import './Header.scss'
-import { graphql } from "gatsby";
 
 export type Header = {
   name: string;
@@ -22,15 +21,3 @@ const Header = ({ name, position }: Header) => {
 }
 
 export default Header;
-
-export const query = graphql `
- query {
-  site {
-    siteMetadata {
-      header {
-        name,
-        position,
-      }
-    }
-  }
-}`;
