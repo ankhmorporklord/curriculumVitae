@@ -47,8 +47,7 @@ export const query = graphql `
         title,
         info {
           text,
-          bold,
-          Tag,
+          prefix,
         }
       }
     }

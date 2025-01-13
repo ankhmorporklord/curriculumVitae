@@ -1,11 +1,10 @@
 import type { GatsbyConfig } from "gatsby";
 import { Header } from "./src/components/Header/Header";
-import { TagType } from "./src/components/Text/Text";
+import data from "./data.json";
 
 export type InfoType = {
   text: string;
-  bold?: boolean;
-  Tag?: TagType;
+  prefix?: string;
 }
 
 export type SectionType = {
@@ -23,20 +22,7 @@ export interface Data {
 };
 
 const config: GatsbyConfig = {
-  siteMetadata: {
-    header: {
-      name: `Zaquiel Rodriguez`,
-      position: `Frontend Developer`
-    },
-    sections: [{
-      title: 'contact',
-      info: [
-        { text: 'phone: ', bold: true }, { text: '+34 644 40 29 41' },
-        { text: 'email: ', bold: true }, { text: 'zaquihex@gmail.com', Tag: 'div' },
-        { text: 'github: ', bold: true }, { text: 'https://github.com/ankhmorporklord', Tag: 'div' }
-      ]
-    }],
-  },
+  siteMetadata: data,
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen

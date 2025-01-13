@@ -1,0 +1,50 @@
+{
+  "header": {
+    "name": "Zaquiel Rodriguez",
+    "position": "Frontend Developer"
+  },
+  "sections": [{
+    "title": "contact",
+    "info": [
+      { "prefix": "phone: ", "text": "+34 644 40 29 41" },
+      { "prefix": "email: ", "text": "zaquihex@gmail.com" },
+      { "prefix": "github: ", "text": "https://github.com/ankhmorporklord" }
+    ]
+  },
+  {
+    "title": "hobbies",
+    "info": [
+      { "text": "Having fun with my dog" },
+      { "text": "Reading books" },
+      { "text": "Watching tv shows and films" }
+    ]
+  },
+  {
+    "title": "soft skills",
+    "info": [
+      { "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
+      { "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
+      { "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
+      { "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry." }
+    ]
+  },
+  {
+    "title": "About me",
+    "info": [
+      { "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" },
+      { "text": "when an unknown printer took a galley of type and scrambled it to make a type specimen book." }
+    ]
+  },
+  {
+    "title": "technologies",
+    "info": [
+      { "text": "React (js/ts)" },
+      { "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry simply dummy text of the printing" },
+      { "text": "Sass + tailwind" },
+      { "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry simply dummy text of the printing" },
+      { "text": "Other tech. on personal projects " },
+      { "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry simply dummy text of the printing.\u2028\u2028Lorem Ipsum is simply dummy text of the printing and typesetting industry simply dummy text of the printing."}
+    ]
+  }
+  ]
+}

@@ -2328,20 +2328,17 @@ type SiteSiteMetadataSectionsFilterListInput = {
 };
 
 type SiteSiteMetadataSectionsInfo = {
-  readonly Tag: Maybe<Scalars['String']>;
-  readonly bold: Maybe<Scalars['Boolean']>;
+  readonly prefix: Maybe<Scalars['String']>;
   readonly text: Maybe<Scalars['String']>;
 };
 
 type SiteSiteMetadataSectionsInfoFieldSelector = {
-  readonly Tag: InputMaybe<FieldSelectorEnum>;
-  readonly bold: InputMaybe<FieldSelectorEnum>;
+  readonly prefix: InputMaybe<FieldSelectorEnum>;
   readonly text: InputMaybe<FieldSelectorEnum>;
 };
 
 type SiteSiteMetadataSectionsInfoFilterInput = {
-  readonly Tag: InputMaybe<StringQueryOperatorInput>;
-  readonly bold: InputMaybe<BooleanQueryOperatorInput>;
+  readonly prefix: InputMaybe<StringQueryOperatorInput>;
   readonly text: InputMaybe<StringQueryOperatorInput>;
 };
 
@@ -2350,8 +2347,7 @@ type SiteSiteMetadataSectionsInfoFilterListInput = {
 };
 
 type SiteSiteMetadataSectionsInfoSortInput = {
-  readonly Tag: InputMaybe<SortOrderEnum>;
-  readonly bold: InputMaybe<SortOrderEnum>;
+  readonly prefix: InputMaybe<SortOrderEnum>;
   readonly text: InputMaybe<SortOrderEnum>;
 };
 

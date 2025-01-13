@@ -12,9 +12,11 @@ const Section = ({ title, info = [] }: Section) => {
   return (
     <>
       <Text type="title" text={title} />
-      {(info).map(({ text, bold, Tag }) => (
-        <Text text={text} bold={Boolean(bold)} Tag={Tag} />
-      ))}
+      <div className="body">
+        {(info).map(({ text, prefix }) => (
+          <Text text={text} prefix={prefix} />
+        ))}
+      </div>
     </>
   );
 }

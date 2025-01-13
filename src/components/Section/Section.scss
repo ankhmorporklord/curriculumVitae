@@ -1,29 +1,5 @@
 @import "../../library";
 
-.layout {
-  color: $color-light;
-  display: inline-flex;
-  position: relative;
-  height: 260px;
-  width: 660px;
-}
-
-.texts {
-  background-color: $color-dark;
-  border-bottom-left-radius: 80px;
-  border-top-left-radius: 80px;
-  display: inline-flex;
-  flex-direction: column;
-  align-self: center;
-  padding: 5px 40px;
-}
-
-.photo {
-  background-color: $color-dark;
-  border-radius: 130px;
-  padding: 10px;
-  position: absolute;
-  right: 0;
-  transform: translate(0, -50%);
-  top: 50%;
+.body {
+  margin: 10px 0;
 }
