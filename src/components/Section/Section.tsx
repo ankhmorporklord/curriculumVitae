@@ -10,14 +10,14 @@ export type Section = {
 
 const Section = ({ title, info = [] }: Section) => {
   return (
-    <>
+    <div>
       <Text type="title" text={title} />
       <div className="body">
         {(info).map(({ text, prefix }) => (
           <Text text={text} prefix={prefix} />
         ))}
       </div>
-    </>
+    </div>
   );
 }
 

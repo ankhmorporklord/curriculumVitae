@@ -6,6 +6,8 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import { Data, SectionType } from "../../gatsby-config";
 import Section from "../components/Section/Section";
+import "./index.scss";
+import { useMemo } from "react";
 
 const pageStyles = {
   color: "#232129",
@@ -16,18 +18,24 @@ const pageStyles = {
 const IndexPage: React.FC<PageProps> = ({ data }: { data: Data, sections: SectionType[] }) => {
 
   const { site: { siteMetadata: { header, sections } } } = data || {};
+
+  // add Header to the second position of the sections
+
+  const sectionsAndHeader: SectionType[] =  sections.toSpliced(1, 0, { title: 'header', info: [] });
+
   return (
-    <main style={pageStyles}>
-      <Header {...header} />
-      {(sections || []).map((section: SectionType) =>(
-        <Section {...section} />
-      ))}
-      <Text type="title" text="title" />
-      <Text type="header" text="header" />
-      <Text type="subtitle" text="subtitle" />
-      <Text text="text" />
+    <div style={pageStyles}>
+
+      <div className="sections">
+        {(sectionsAndHeader || []).map((section: SectionType) => {
+          if (section.title === 'header') return <Header {...header} />
+          return (
+            <Section {...section} />
+          );
+        })}
+      </div>
       <Footer />
-    </main>
+    </div>
   )
 }
 
