@@ -1,63 +1,94 @@
-import * as React from "react"
-import { graphql, HeadFC, PageProps } from "gatsby"
-import '../library.scss';
-import Text from '../components/Text/Text';
+import * as React from "react";
+import { graphql, HeadFC, PageProps } from "gatsby";
+import "../library.scss";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import { Data, SectionType } from "../../gatsby-config";
-import Section from "../components/Section/Section";
+import { Data } from "../../gatsby-config";
+import Section, { SectionType } from "../components/Section/Section";
 import "./index.scss";
-import { useMemo } from "react";
+import { createContext, useState } from "react";
 
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
+type themeType = "dark" | "light";
+type themeDetailType = "human" | "tech" | undefined;
+
+interface themeContextType {
+  theme: themeType;
+  themeDetail?: themeDetailType;
+  setTheme: (newTheme: themeType) => void;
+  setThemeDetail: (newThemeDetail: themeDetailType) => void;
 }
 
-const IndexPage: React.FC<PageProps> = ({ data }: { data: Data, sections: SectionType[] }) => {
+const initialContext: themeContextType = {
+  theme: "dark",
+  themeDetail: undefined,
+  setTheme: () => {},
+  setThemeDetail: () => {},
+};
 
-  const { site: { siteMetadata: { header, sections } } } = data || {};
+export const ThemeContext = createContext(initialContext);
 
+const IndexPage: React.FC<PageProps> = ({
+  data,
+}: {
+  data: Data;
+  sections: SectionType[];
+}) => {
+  const [theme, setTheme] = useState<themeType>("dark");
+  const [themeDetail, setThemeDetail] = useState<themeDetailType>(undefined);
+
+  const {
+    site: {
+      siteMetadata: { header, sections },
+    },
+  } = data || {};
   // add Header to the second position of the sections
 
-  const sectionsAndHeader: SectionType[] =  sections.toSpliced(1, 0, { title: 'header', info: [] });
+  const sectionsAndHeader: SectionType[] = sections.toSpliced(1, 0, {
+    title: "header",
+    type: "human",
+    info: [],
+  });
 
   return (
-    <div style={pageStyles}>
-
-      <div className="sections">
-        {(sectionsAndHeader || []).map((section: SectionType) => {
-          if (section.title === 'header') return <Header {...header} />
-          return (
-            <Section {...section} />
-          );
-        })}
+    <ThemeContext.Provider
+      value={theme}
+      setTheme={setTheme}
+      themeDetail={themeDetail}
+      setThemeDetail={setThemeDetail}
+    >
+      <div className={`index-layout ${theme}`}>
+        <div className="index-sections">
+          {(sectionsAndHeader || []).map((section: SectionType) => {
+            if (section.title === "header") return <Header {...header} />;
+            return <Section {...section} />;
+          })}
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
-  )
-}
+    </ThemeContext.Provider>
+  );
+};
 
-export default IndexPage
+export default IndexPage;
 
-export const Head: HeadFC = () => <title>Home Page</title>
+export const Head: HeadFC = () => <title>Home Page</title>;
 
-export const query = graphql `
- query {
-  site {
-    siteMetadata {
-      header {
-        name,
-        position,
-      },
-      sections {
-        title,
-        info {
-          text,
-          prefix,
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        header {
+          name
+          position
+        }
+        sections {
+          title
+          info {
+            text
+            prefix
+          }
         }
       }
     }
   }
-}`;
+`;

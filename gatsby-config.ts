@@ -1,25 +1,23 @@
 import type { GatsbyConfig } from "gatsby";
 import { Header } from "./src/components/Header/Header";
 import data from "./data.json";
+import { TextType } from "./src/components/Text/Text";
+import { SectionType } from "./src/components/Section/Section";
 
 export type InfoType = {
   text: string;
+  type?: TextType;
   prefix?: string;
-}
-
-export type SectionType = {
-  title: string;
-  info: InfoType[];
 };
 
 export interface Data {
   site: {
     siteMetadata: {
-      header: Header
-      sections: SectionType[]
-    }
-  }
-};
+      header: Header;
+      sections: SectionType[];
+    };
+  };
+}
 
 const config: GatsbyConfig = {
   siteMetadata: data,
@@ -28,11 +26,11 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
-      "gatsby-plugin-image",
-      "gatsby-plugin-sharp",
-      "gatsby-transformer-sharp",
-      "gatsby-plugin-sass",
-  ]
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sass",
+  ],
 };
 
 export default config;

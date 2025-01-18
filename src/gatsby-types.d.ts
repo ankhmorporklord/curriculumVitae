@@ -2330,16 +2330,19 @@ type SiteSiteMetadataSectionsFilterListInput = {
 type SiteSiteMetadataSectionsInfo = {
   readonly prefix: Maybe<Scalars['String']>;
   readonly text: Maybe<Scalars['String']>;
+  readonly type: Maybe<Scalars['String']>;
 };
 
 type SiteSiteMetadataSectionsInfoFieldSelector = {
   readonly prefix: InputMaybe<FieldSelectorEnum>;
   readonly text: InputMaybe<FieldSelectorEnum>;
+  readonly type: InputMaybe<FieldSelectorEnum>;
 };
 
 type SiteSiteMetadataSectionsInfoFilterInput = {
   readonly prefix: InputMaybe<StringQueryOperatorInput>;
   readonly text: InputMaybe<StringQueryOperatorInput>;
+  readonly type: InputMaybe<StringQueryOperatorInput>;
 };
 
 type SiteSiteMetadataSectionsInfoFilterListInput = {
@@ -2349,6 +2352,7 @@ type SiteSiteMetadataSectionsInfoFilterListInput = {
 type SiteSiteMetadataSectionsInfoSortInput = {
   readonly prefix: InputMaybe<SortOrderEnum>;
   readonly text: InputMaybe<SortOrderEnum>;
+  readonly type: InputMaybe<SortOrderEnum>;
 };
 
 type SiteSiteMetadataSectionsSortInput = {

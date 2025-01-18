@@ -5,6 +5,7 @@
   },
   "sections": [{
     "title": "contact",
+    "type": "human",
     "info": [
       { "prefix": "phone: ", "text": "+34 644 40 29 41" },
       { "prefix": "email: ", "text": "zaquihex@gmail.com" },
@@ -13,6 +14,7 @@
   },
   {
     "title": "hobbies",
+    "type": "human",
     "info": [
       { "text": "Having fun with my dog" },
       { "text": "Reading books" },
@@ -21,6 +23,7 @@
   },
   {
     "title": "soft skills",
+    "type": "human",
     "info": [
       { "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
       { "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
@@ -30,6 +33,7 @@
   },
   {
     "title": "About me",
+    "type": "human",
     "info": [
       { "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" },
       { "text": "when an unknown printer took a galley of type and scrambled it to make a type specimen book." }
@@ -37,14 +41,41 @@
   },
   {
     "title": "technologies",
+    "type": "tech",
     "info": [
-      { "text": "React (js/ts)" },
+      { "text": "React (js/ts)",
+        "type": "subtitle"
+      },
       { "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry simply dummy text of the printing" },
-      { "text": "Sass + tailwind" },
+      { "text": "Sass + tailwind",
+        "type": "subtitle" },
       { "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry simply dummy text of the printing" },
-      { "text": "Other tech. on personal projects " },
+      { "text": "Other tech. on personal projects ",
+        "type": "subtitle" },
       { "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry simply dummy text of the printing.\u2028\u2028Lorem Ipsum is simply dummy text of the printing and typesetting industry simply dummy text of the printing."}
     ]
-  }
+  },
+    {
+      "title": "Education",
+      "type": "tech",
+      "info": [
+        { "text": "Universitat Politécnica", "type": "subtitle" },
+        { "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
+        { "text": "Master UX/UI", "type": "subtitle" },
+        { "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."}
+      ]
+    },
+    {
+      "title": "Work experience",
+      "type": "tech",
+      "info": [
+        { "text": "Sopra Steria 2018-2020", "type": "subtitle" },
+        { "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s." },
+        { "text": "Datio 2020-2022", "type": "subtitle" },
+        { "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."},
+        { "text": "4Finance 2022-2025", "type": "subtitle" },
+        { "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."}
+      ]
+    }
   ]
 }

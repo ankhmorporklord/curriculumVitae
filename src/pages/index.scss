@@ -1,4 +1,21 @@
-.sections {
+@import "../library";
+
+body {
+  margin: 0;
+}
+
+.index-layout {
+  padding-top: 120px;
+
+  &.dark {
+    background-color: $color-dark;
+  }
+  &.light {
+    background-color: $color-light;
+  }
+}
+.index-sections {
   display: grid;
   grid-template-columns: auto auto auto;
+  grid-column-gap: 60px;
 }
