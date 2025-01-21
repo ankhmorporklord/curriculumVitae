@@ -1,7 +1,9 @@
-import React from 'react';
-import Text from '../Text/Text';
-import Photo from '../../assets/photo.png';
-import './Header.scss'
+import React from "react";
+import Text from "../Text/Text";
+import Photo from "../../assets/photo.png";
+import "./Header.scss";
+import { getReversedTheme } from "../../utils/theme";
+import useThemeProvider from "../../providers/useThemeProvider";
 
 export type Header = {
   name: string;
@@ -9,15 +11,23 @@ export type Header = {
 };
 
 const Header = ({ name, position }: Header) => {
+  const { theme } = useThemeProvider();
+  const reversedTheme = getReversedTheme(theme);
   return (
-    <span className="layout">
-      <span className="texts">
-        <Text bold type="header" text={name} />
-        <Text type="header" text={position}/>
+    <div className={`layout ${theme}`} key="header">
+      <span className={`texts ${reversedTheme}`}>
+        <Text type="header" text={name} themeFromParent={theme} />
+        <Text type="header" text={position} themeFromParent={theme} />
       </span>
-      <img className="photo" src={Photo} alt='logo' width="239px" height="239px" />
-    </span>
+      <img
+        className={`photo ${reversedTheme}`}
+        src={Photo}
+        alt="logo"
+        width="150px"
+        height="150px"
+      />
+    </div>
   );
-}
+};
 
 export default Header;

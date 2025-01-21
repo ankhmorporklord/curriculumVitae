@@ -1,14 +1,30 @@
 @import "../../library";
 
 .layout {
-  color: $color-light;
-  display: inline;
+  // theme
+  &.dark {
+    color: $color-dark;
+  }
+
+  &.light {
+    color: $color-light;
+  }
+
+  display: flex;
+  margin: 0 15px;
   position: relative;
-  width: 660px;
+  width: 570px;
 }
 
 .texts {
-  background-color: $color-dark;
+  // theme
+  &.dark {
+    background-color: $color-dark;
+  }
+
+  &.light {
+    background-color: $color-light;
+  }
   border-bottom-left-radius: 80px;
   border-top-left-radius: 80px;
   display: inline-flex;
@@ -18,11 +34,19 @@
 }
 
 .photo {
-  background-color: $color-dark;
+  // theme
+  &.dark {
+    background-color: $color-dark;
+  }
+
+  &.light {
+    background-color: $color-light;
+  }
+
   border-radius: 130px;
   padding: 10px;
   position: absolute;
-  right: 0;
+  right: 5px;
   transform: translate(0, -50%);
-  top: 15%;
+  top: 97px;
 }

@@ -1,11 +1,19 @@
 @import "../library";
 
-body {
+
+html, body, #___gatsby, #gatsby-focus-wrapper {
+  height: 100%;
   margin: 0;
+  width: 100%;
+  overflow: hidden;
 }
 
 .index-layout {
-  padding-top: 120px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 100%;
+  padding: 50px 25px;
 
   &.dark {
     background-color: $color-dark;
@@ -14,8 +22,15 @@ body {
     background-color: $color-light;
   }
 }
+
 .index-sections {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-column-gap: 60px;
+  display: flex;
+  flex-wrap: wrap;
+
+
+  .index-sections-child {
+    position: relative;
+    width: 30%;
+    min-width: 500px;
+  }
 }
