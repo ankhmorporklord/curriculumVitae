@@ -7,8 +7,15 @@
 }
 
 .footer-separator {
+  // theme
+  &.dark {
+    background-color: $color-dark;
+  }
+  &.light {
+    background-color: $color-light;
+  }
+
   align-self: center;
-  background-color: $color-dark;
   justify-content: center;
   height: 3px;
   width: 40px;
