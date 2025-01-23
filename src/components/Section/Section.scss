@@ -1,5 +1,18 @@
 @import "../../library";
 
-.body {
+.section-layout {
+  padding: 15px;
+  min-width: 500px;
+
+  &.light {
+    background-color: $color-light;
+  }
+
+  &.dark {
+    background-color: $color-dark;
+  }
+}
+
+.section-body {
   margin: 10px 0;
 }

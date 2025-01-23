@@ -2,6 +2,8 @@ import React from "react";
 import Text from "../Text/Text";
 import "./Section.scss";
 import { InfoType } from "../../../gatsby-config";
+import useThemeProvider from "../../providers/useThemeProvider";
+import { getReversedTheme } from "../../utils/theme";
 
 export type SectionType = {
   title: string;
@@ -9,14 +11,27 @@ export type SectionType = {
   info: InfoType[];
 };
 
-const Section = ({ title, info = [] }: SectionType) => {
-  console.log("info", info);
+const Section = ({ title, info = [], type }: SectionType) => {
+  const { theme, themeDetail } = useThemeProvider();
+  const reversedTheme = getReversedTheme(theme);
+
+  const applyThemeDetail = themeDetail === type;
+
   return (
-    <div>
-      <Text type="title" text={title} />
-      <div className="body">
+    <div className={`section-layout ${applyThemeDetail && reversedTheme}`}>
+      <Text
+        type="title"
+        text={title}
+        themeFromParent={applyThemeDetail ? theme : undefined}
+      />
+      <div className="section-body">
         {info.map((infoArgs) => (
-          <Text {...infoArgs} />
+          <div key={Math.random()}>
+            <Text
+              {...infoArgs}
+              themeFromParent={applyThemeDetail ? theme : undefined}
+            />
+          </div>
         ))}
       </div>
     </div>
