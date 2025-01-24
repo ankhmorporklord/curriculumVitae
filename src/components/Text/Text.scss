@@ -1,5 +1,13 @@
 @import "../../library";
 
+// utilities
+
+.clickable {
+  cursor: pointer;
+}
+
+// theme
+
 .dark {
   color: $color-dark;
 }
@@ -42,7 +50,20 @@
   min-width: fit-content;
 }
 
+// paddings
+
+.padding-subtitle {
+  padding-bottom: 8px;
+}
+
+.padding-text {
+  padding-bottom: 15px;
+}
+
+// Others
+
 .wrapper-square {
+  // theme
   &.light {
     border: 2px solid $color-light;
   }
@@ -53,6 +74,7 @@
 }
 
 .wrapper-line {
+  // theme
   &.dark {
     background-color: $color-dark;
   }
