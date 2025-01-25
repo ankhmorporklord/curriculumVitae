@@ -22,14 +22,14 @@ const Section = ({ title, info = [], type }: SectionType) => {
       <Text
         type="title"
         text={title}
-        themeFromParent={applyThemeDetail ? theme : undefined}
+        themeFromParent={applyThemeDetail ? reversedTheme : undefined}
       />
       <div className="section-body">
         {info.map((infoArgs) => (
           <div key={Math.random()}>
             <Text
               {...infoArgs}
-              themeFromParent={applyThemeDetail ? theme : undefined}
+              themeFromParent={applyThemeDetail ? reversedTheme : undefined}
             />
           </div>
         ))}

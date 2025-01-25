@@ -16,8 +16,8 @@ const Header = ({ name, position }: Header) => {
   return (
     <div className={`layout ${theme}`} key="header">
       <span className={`texts ${reversedTheme}`}>
-        <Text type="header" text={name} themeFromParent={theme} />
-        <Text type="header" text={position} themeFromParent={theme} />
+        <Text type="header" text={name} themeFromParent={reversedTheme} />
+        <Text type="header" text={position} themeFromParent={reversedTheme} />
       </span>
       <img
         className={`photo ${reversedTheme}`}

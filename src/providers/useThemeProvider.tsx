@@ -7,7 +7,7 @@ import React, {
 } from "react";
 
 export type themeType = "dark" | "light";
-type themeDetailType = "human" | "tech" | undefined;
+export type themeDetailType = "human" | "tech" | undefined;
 
 export interface themeContextType {
   theme: themeType;
@@ -26,7 +26,7 @@ type Props = {
 
 const ThemeProvider = ({ children }: Props): JSX.Element => {
   const [theme, setTheme] = useState<themeType>("dark");
-  const [themeDetail, setThemeDetail] = useState<themeDetailType>(undefined);
+  const [themeDetail, setThemeDetail] = useState<themeDetailType>("human");
 
   const changeTheme = (newTheme: themeType) => {
     setTheme(newTheme);

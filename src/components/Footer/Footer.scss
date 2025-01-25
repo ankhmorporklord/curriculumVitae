@@ -4,6 +4,22 @@
 .footer-layout {
   display: flex;
   justify-content: center;
+  margin-top: 15px;
+}
+
+.footer-option {
+  &.light {
+    div {
+      background-color: $color-light;
+    }
+
+  }
+
+  &.dark {
+    div {
+      background-color: $color-dark;
+    }
+  }
 }
 
 .footer-separator {

@@ -9,11 +9,11 @@
 // theme
 
 .dark {
-  color: $color-dark;
+  color: $color-light;
 }
 
 .light {
-  color: $color-light;
+  color: $color-dark;
 }
 
 // font-sizes
@@ -52,12 +52,12 @@
 
 // paddings
 
-.padding-subtitle {
-  padding-bottom: 8px;
+.margin-subtitle {
+  margin-bottom: 8px;
 }
 
-.padding-text {
-  padding-bottom: 15px;
+.margin-text {
+  margin-bottom: 15px;
 }
 
 // Others
@@ -65,10 +65,10 @@
 .wrapper-square {
   // theme
   &.light {
-    border: 2px solid $color-light;
+    border: 2px solid $color-dark;
   }
   &.dark {
-    border: 2px solid $color-dark;
+    border: 2px solid $color-light;
   }
   padding: 0 10px;
 }
@@ -76,11 +76,11 @@
 .wrapper-line {
   // theme
   &.dark {
-    background-color: $color-dark;
+    background-color: $color-light;
   }
 
   &.light {
-    background-color: $color-light;
+    background-color: $color-dark;
   }
 
   height: 2px;

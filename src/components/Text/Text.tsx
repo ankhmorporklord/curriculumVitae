@@ -1,8 +1,8 @@
 import classes from "classnames";
-import React, { useContext } from "react";
+import React from "react";
 import "./Text.scss";
-import { getReversedTheme } from "../../utils/theme";
 import useThemeProvider, { themeType } from "../../providers/useThemeProvider";
+import { getReversedTheme } from "../../utils/theme";
 
 export type TextType = "header" | "title" | "subtitle" | "text";
 
@@ -27,38 +27,40 @@ const Text = ({
 }: TextProps) => {
   const { theme } = useThemeProvider();
 
-  console.log("text - theme: ", theme);
-
-  const themeReversed = themeFromParent || getReversedTheme(theme);
+  const themeTextToApply = themeFromParent || theme;
+  const themeWrapperToApply = themeFromParent
+    ? getReversedTheme(themeFromParent || theme)
+    : theme;
 
   const showWrapper = type === "title" || showSquareWrapper;
   return (
     <div
       className={classes(
         showWrapper && "wrapper-layout",
-        themeReversed,
+        themeTextToApply,
         Boolean(onClick) && "clickable",
-        `padding-${type}`,
+        `margin-${type}`,
       )}
       onClick={onClick}
     >
       {prefix && (
-        <span className={classes(type, "text-width", "bold", themeReversed)}>
+        <span className={classes(type, "text-width", "bold", themeTextToApply)}>
           {prefix}
         </span>
       )}
       <span
         className={classes(
           type,
+          themeTextToApply,
           "text-width",
-          showWrapper && `wrapper-square ${themeReversed}`,
+          showWrapper && `wrapper-square ${themeWrapperToApply}`,
         )}
       >
         {text}
       </span>
 
       {showWrapper && showSquareWrapperLine !== false && (
-        <div className={classes(`wrapper-line ${themeReversed}`)}></div>
+        <div className={classes(`wrapper-line ${themeWrapperToApply}`)}></div>
       )}
     </div>
   );
