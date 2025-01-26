@@ -27,12 +27,17 @@ const Text = ({
 }: TextProps) => {
   const { theme } = useThemeProvider();
 
+  console.log("type: ", type);
+
   const themeTextToApply = themeFromParent || theme;
   const themeWrapperToApply = themeFromParent
     ? getReversedTheme(themeFromParent || theme)
     : theme;
 
   const showWrapper = type === "title" || showSquareWrapper;
+
+  console.log("");
+
   return (
     <div
       className={classes(

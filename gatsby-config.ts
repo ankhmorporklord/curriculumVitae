@@ -10,12 +10,14 @@ export type InfoType = {
   prefix?: string;
 };
 
+export interface DataJson {
+  header: Header;
+  sections: SectionType[];
+}
+
 export interface Data {
   site: {
-    siteMetadata: {
-      header: Header;
-      sections: SectionType[];
-    };
+    siteMetadata: DataJson;
   };
 }
 

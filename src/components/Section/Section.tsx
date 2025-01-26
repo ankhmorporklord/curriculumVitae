@@ -29,6 +29,7 @@ const Section = ({ title, info = [], type }: SectionType) => {
           <div key={Math.random()}>
             <Text
               {...infoArgs}
+              type={infoArgs?.type || "text"}
               themeFromParent={applyThemeDetail ? reversedTheme : undefined}
             />
           </div>

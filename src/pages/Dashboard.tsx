@@ -4,15 +4,14 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Section, { SectionType } from "../components/Section/Section";
 import "./index.scss";
-import data from "../../data.json";
 import useThemeProvider from "../providers/useThemeProvider";
-import { useContext } from "react";
+import { DataJson } from "../../gatsby-config";
 
-const Dashboard = () => {
+const Dashboard = ({ dataJson }: { dataJson: DataJson }) => {
   const { theme } = useThemeProvider();
   // add Header to the second position of the sections
 
-  const { sections, header } = data;
+  const { sections, header } = dataJson;
 
   // @ts-ignore
   const sectionsAndHeader: SectionType[] = sections.toSpliced(1, 0, {
@@ -41,23 +40,3 @@ const Dashboard = () => {
 export default Dashboard;
 
 export const DashboardHead: HeadFC = () => <title>Dashboard</title>;
-/*
-export const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        header {
-          name
-          position
-        }
-        sections {
-          title
-          info {
-            text
-            prefix
-          }
-        }
-      }
-    }
-  }
-`;*/
