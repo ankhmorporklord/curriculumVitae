@@ -1,6 +1,6 @@
 import React from "react";
 import Text from "../Text/Text";
-import Photo from "../../assets/photo.png";
+import Photo from "assets/photo.png";
 import "./Header.scss";
 import { getReversedTheme } from "../../utils/theme";
 import useThemeProvider from "../../providers/useThemeProvider";

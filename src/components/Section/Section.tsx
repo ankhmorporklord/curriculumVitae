@@ -1,7 +1,7 @@
 import React from "react";
 import Text from "../Text/Text";
 import "./Section.scss";
-import { InfoType } from "../../../gatsby-config";
+import { InfoType } from "../../types";
 import useThemeProvider from "../../providers/useThemeProvider";
 import { getReversedTheme } from "../../utils/theme";
 
